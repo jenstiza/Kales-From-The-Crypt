@@ -14,10 +14,15 @@
     <!-- <div id="page-container">
           <div id="content-wrap"> -->
     <header>
-        <nav><a href="/">HOME </a></nav>
-                        </li>
-                    </div>
-              </nav>
+        <nav>
+            <img src="https://i.imgur.com/8BPwZsy.png">
+           
+              <a href="/logout">LOG OUT</a>
+            <% } else { %>
+              <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/yYJh1b5.png"></a>
+            <% } %>
+          </nav>
+          
     </header>
     
     <main>
