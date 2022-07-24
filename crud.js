@@ -2,3 +2,5 @@
 require('dotenv').config();
 // Connect to our database (line of code must be AFTER the above - .env)
 require('./config/database');
+
+const Recipe = require('./models/recipe');

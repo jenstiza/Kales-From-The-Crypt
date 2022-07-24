@@ -7,12 +7,17 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 require('dotenv').config();
 require('./config/database');
 require('./config/passport');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var recipesRouter = require('./routes/recipes');
+var reviewsRouter = require('./routes/reviews');
+var mainGenresRouter = require('./routes/mainGenres');
+var subGenresRouter = require('./routes/subGenres')
 
 var app = express();
 
@@ -42,6 +47,11 @@ app.use(methodOverride("_method"));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/recipes', recipesRouter);
+app.use('/main', mainGenresRouter);
+app.use('/subgenres', subGenresRouter);
+
+app.use('/', isLoggedIn, reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
