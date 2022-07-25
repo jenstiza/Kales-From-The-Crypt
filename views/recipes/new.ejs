@@ -1,0 +1,36 @@
+<%- include('../partials/header.ejs') %>
+ <h1>New Recipe</h1>
+    <section id="new-subGenre-section">
+        <form action="/genres" method="POST" id="form1">
+            <label>What Category does it belong to?
+                <input type="text" name= mainCategory>
+            </label><br>
+           
+            </div>
+            <select name="mainCategory" id="">
+        <option value="Comedy">A Fish Called Wensleydale</option>
+        <option value="Sci-fi">Cloves Encounters</option>
+        <option value="Fantasy">Leeky Cauldron</option>
+        <option value="Horror">The Bleu Witch Project</option>
+        <option value="Nailed-it!">To Err is Cumin</option>
+      </select>
+      <br>
+      <label>
+       What is the name of your creation? <input type = "text" name = name> 
+      </label> <br>
+      <label>
+        Do you have an image of your creation? If so, insert url <input type ="text" name = imageUrl>
+      </label> <br>
+      <label>
+        Describe your creation <input type = "text" name = description>
+      </label>
+      <label>
+        What ingredients does your creation require? <input type = "text" name = ingredients>
+      </label> <br>
+      <label>
+        How do we make your creation? <input type = "text" name = instructions>
+      </label>
+      <button type="submit" form="form1" class="btn btn-success" id="submit-new">Add Recipe</button>
+  </form>        
+</section>
+<%- include('../partials/footer.ejs') %>
