@@ -1,5 +1,5 @@
-
-
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 var subGenreSchema = new Schema ({
     subCategory: {
@@ -8,4 +8,4 @@ var subGenreSchema = new Schema ({
     }
 });
 
-module.exports 
+module.exports = mongoose.model('SubGenre', subGenreSchema);
