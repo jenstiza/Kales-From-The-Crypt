@@ -1,9 +1,11 @@
 body {
-  padding: 50px;
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 50px 1fr 30px;
+  grid-template-columns: 80fr 4fr;
+  grid-template-rows: 75px 1fr 30px;
   font-family: 'MedievalSharp', cursive;
+  background-color: burlywood;
+  background-image: url('https://images.unsplash.com/photo-1555234432-e681ac3ad0ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80');
+  background-size:cover;
 }
 
 a {
@@ -15,27 +17,14 @@ nav {
   flex-direction: row; /* default */
   justify-content: flex-start; /* default */
   align-items: center; /* center vertically (cross-axis) */
-  height: 50px;
-  background-color: #a2cbb6;
+  height: 100px;
+  background-color: #4f3600;
+  color: white;
+  
 }
 nav > div:last-child {
   margin-left: auto;
 }
 
-aside {
-  background-color: #a2b4da;
-}
-	
-main {
-  background-color: #f3dba8;
-}
-	
-footer {
-  background-color: #a2cbb6;
-}
 
-.flex-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
