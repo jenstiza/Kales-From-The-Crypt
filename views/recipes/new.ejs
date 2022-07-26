@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs') %>
  <h1>New Recipe</h1>
     <section id="new-subGenre-section">
-        <form action="/genres" method="POST" id="form1">
+        <form action="/recipes" method="POST" id="form1">
             <label>What Category does it belong to?
                 <input type="text" name= mainCategory>
             </label><br>
@@ -16,7 +16,10 @@
       </select>
       <br>
       <label>
-       What is the name of your creation? <input type = "text" name = name> 
+        What is the name of the Genre?<input type = "text" name = subGenre> 
+       </label> <br>
+      <label>
+       What is the name of your creation? <input type = "text" name = title> 
       </label> <br>
       <label>
         Do you have an image of your creation? If so, insert url <input type ="text" name = imageUrl>

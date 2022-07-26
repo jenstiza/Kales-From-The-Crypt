@@ -9,14 +9,22 @@ module.exports = {
     show,
     edit,
     update,
+    genreSort,
     delete: deleteRecipe,
   }
+
+
+function genreSort(req,res) {
+  Recipe.find({})
+}
+
+
 
 
 
 function index(req, res) {
   Recipe.find({})
-    .populate('author')
+    .populate('user')
     .then(recipes => {
       res.render('recipes/index', {
         recipes,
@@ -36,9 +44,12 @@ function newRecipe(req, res) {
 }
 
 function create(req, res) {
-    const Recipe = new Recipe(req.body);
+  req.body.user = req.user._id;
+  req.body.userName = req.user.name;
+  req.body.userAvatar = req.user.avatar;
+    const recipe = new Recipe(req.body);
     // Assign the logged in user's id
-    recipe.userRecommending = req.user._id;
+   
     recipe.save(function(err) {
       if (err) return res.redirect('/recipes/new' /* or a path that displays a custom error */);
       // Probably want to go to newly added book's show view
@@ -49,11 +60,11 @@ function create(req, res) {
 function show(req, res) {
   Recipe.findById(req.params.id)
     .populate([
-      'author', 
+      'user', 
       {
         path: 'reviews', 
         populate: {  
-          path: 'author',
+          path: 'user',
         }
       }
     ])

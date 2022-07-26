@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Title: </div>
+    <div><%= recipe.title %></div>
+    <div>Description</div>
+    <div><%= recipe.description %></div>
+    <div><img src = "<%= recipe.imageUrl %>"></div>
+    <div>Ingredients </div>
+    <div><%= recipe.ingredients %></div>
+    <div>Instructions: </div>
+    <div><%= recipe.instructions %></div>
+    <div>User:</div>
+    <div><%= recipe.user %></div>
+    <div>Recipe Created By:</div>
+    <div><img src = "<%= recipe.userAvatar %>"></div>
+    
+    <div>
+   
+
+<%- include('../partials/footer') %>

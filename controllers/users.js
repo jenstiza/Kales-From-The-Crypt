@@ -27,7 +27,7 @@ function show(req, res) {
       {
         path: 'recipes',
         populate: {
-          path: 'author'
+          path: 'user'
         }
       }
     ])

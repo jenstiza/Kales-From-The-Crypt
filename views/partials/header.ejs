@@ -16,7 +16,7 @@
     <header>
         <nav>
             <img src="https://i.imgur.com/8BPwZsy.png">
-           
+            <% if (user) { %>
               <a href="/logout">LOG OUT</a>
             <% } else { %>
               <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/yYJh1b5.png"></a>

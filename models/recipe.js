@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const reviewSchema = new Schema({
-  author: {
+  user: {
     type: Schema.Types.ObjectId, 
     ref: "User"
   },
@@ -19,7 +19,15 @@ const reviewSchema = new Schema({
 })
 
 const recipeSchema = new Schema({
-  name: {
+  mainGenre: {
+    type: String,
+    enum: ['A Fish Called Wensleydale', 'Cloves Encounters', 'Leeky Cauldron', 'The Bleu Witch Project', 'To Err is Cumin']
+  },
+  subGenre: {
+    type: String,
+  },
+
+  title: {
     type: String,
     required: true
   },
@@ -39,7 +47,7 @@ const recipeSchema = new Schema({
     type: [String],
     required: true,
   },
-  author: {
+  user: {
     type: Schema.Types.ObjectId, 
     ref: "User"
   },

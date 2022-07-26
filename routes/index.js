@@ -3,7 +3,7 @@ var router = express.Router();
 const passport = require('passport');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Kales' });
 });
 
 // Google OAuth login route
@@ -12,7 +12,7 @@ router.get('/auth/google', passport.authenticate(
   {
     scope: ['profile', 'email'],
     // Optionally force pick account every time
-    // prompt: "select_account"
+     prompt: "select_account"
   }
 ));
 
