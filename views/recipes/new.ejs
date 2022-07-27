@@ -1,22 +1,23 @@
-<%- include('../partials/header.ejs') %>
-
-<script>
-  let comedy = true;
-  let horror = false;
-  let genre = document.getElementById('genreSelection');
-  genre.addEventListener('click', function(e){
-    console.log(e);
-
-  });
-
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kales From The Crypt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
 
  <h1>New Recipe</h1>
     <section id="new-subGenre-section">
         <form action="/recipes" method="POST" id="form1">
             <label>What Category does it belong to?
-                <input type="text" name= mainCategory>
-            </label><br>
+                
+            </label>
            
             </div>
             <select name="mainCategory" id="genreSelection">
@@ -27,53 +28,49 @@
         <option value="nailed-it!">To Err is Cumin</option>
       </select>
       <br>
-      <label>
-        What is the name of the Genre?<input type = "text" name = subGenre> 
-       </label> <br>
-       <% if (comedy) { %>
-       <select name="subCategory" >
+      <label> What is the name of the Genre?</label> 
+       <!-- // -->
+       <select name="subCategory" id="comedy" class="genre-display-on">
         <option value="comedy">Brooklyn Nine-Nine</option>
         <option value="comedy">Derry Girls</option>
         <option value="comedy">Parks and Recreation</option>
         <option value="comedy">Psych</option>
         <option value="comedy">The Marvelous Mrs. Maisel</option>
       </select>
-      <% } else if (horror) { %>
-        <select name="subCategory" >
+      <!-- // -->
+        <select name="subCategory" id="horror"class="genre-display-off">
           <option value="horror">Haunting of Bly Manor</option>
           <option value="horror">Hush</option>
           <option value="horror">Midsommar</option>
           <option value="horror">The Call</option>
           <option value="horror">To Walking Dead</option>
         </select>
-        <% } else if (fantasy) { %>
-          <select name="subCategory" >
+        <!-- // -->
+          <select name="subCategory" id = "fantasy" class="genre-display-off">
             <option value="fantasy">Encanto</option>
             <option value="fantasy">Game of Thrones</option>
             <option value="fantasy">Harry Potter</option>
             <option value="fantasy">Lord of the Rings</option>
             <option value="fantasy">The Witcher</option>
           </select>
-          <% } else if (sci-fi) { %>
-            <select name="subCategory" >
+          <!-- // -->
+            <select name="subCategory" id="sci-fi" class="genre-display-off">
               <option value="sci-fi">Futurama</option>
               <option value="sci-fi">Star Trek</option>
               <option value="sci-fi">Star Wars</option>
               <option value="sci-fi">The Orville</option>
               <option value="sci-fi">Umbrella Academy</option>
             </select>
-            <% } else if (nailed-it) { %>
-              <select name="subCategory" >
+            <!-- // -->
+              <select name="subCategory" id="nailed-it" class="genre-display-off">
                 <option value="nailed-it">Hall of Shame</option>
-        <% } %>
-      <label>
-       What is the name of your creation? <input type = "text" name = title> 
-      </label> <br>
+       <!-- // -->
+      <label>What is the name of your creation? </label><input type ="text" name = title> <br>
       <label>
         Do you have an image of your creation? If so, insert url <input type ="text" name = imageUrl>
       </label> <br>
       <label>
-        Describe your creation <input type = "text" name = description>
+        Describe your creation: <input type = "text" name = description>
       </label>
       <label>
         What ingredients does your creation require? <input type = "text" name = ingredients>
@@ -85,6 +82,28 @@
   </form>        
 </section>
 
+<script>
+  let comedy = document.getElementById('comedy');
+  let horror = document.getElementById('horror');
+  let fantasy = document.getElementById('fantasy');
+  let scifi = document.getElementById('sci-fi');
+  let hallofshame = document.getElementById('nailed-it');
+  let genre = document.getElementById('genreSelection');
+  let genreArr = [comedy,horror,fantasy,scifi,hallofshame];
+
+  genre.addEventListener('click', function(e){
+    let option = e.target.options.selectedIndex
+   genreArr.forEach(function(g){
+      g.classList.add("genre-display-on")
+    });
+    genreArr[option].remove("genre-display-off");
+    genreArr[option].add("genre-display-on");
+    
+  });
+
+</script>
 
 
-<%- include('../partials/footer.ejs') %>
+</main>
+</body>
+</html>
