@@ -1,4 +1,16 @@
 <%- include('../partials/header.ejs') %>
+
+<script>
+  let comedy = true;
+  let horror = false;
+  let genre = document.getElementById('genreSelection');
+  genre.addEventListener('click', function(e){
+    console.log(e);
+
+  });
+
+</script>
+
  <h1>New Recipe</h1>
     <section id="new-subGenre-section">
         <form action="/recipes" method="POST" id="form1">
@@ -7,17 +19,53 @@
             </label><br>
            
             </div>
-            <select name="mainCategory" id="">
-        <option value="Comedy">A Fish Called Wensleydale</option>
-        <option value="Sci-fi">Cloves Encounters</option>
-        <option value="Fantasy">Leeky Cauldron</option>
-        <option value="Horror">The Bleu Witch Project</option>
-        <option value="Nailed-it!">To Err is Cumin</option>
+            <select name="mainCategory" id="genreSelection">
+        <option value="comedy">A Fish Called Wensleydale</option>
+        <option value="sci-fi">Cloves Encounters</option>
+        <option value="fantasy">Leeky Cauldron</option>
+        <option value="horror">The Bleu Witch Project</option>
+        <option value="nailed-it!">To Err is Cumin</option>
       </select>
       <br>
       <label>
         What is the name of the Genre?<input type = "text" name = subGenre> 
        </label> <br>
+       <% if (comedy) { %>
+       <select name="subCategory" >
+        <option value="comedy">Brooklyn Nine-Nine</option>
+        <option value="comedy">Derry Girls</option>
+        <option value="comedy">Parks and Recreation</option>
+        <option value="comedy">Psych</option>
+        <option value="comedy">The Marvelous Mrs. Maisel</option>
+      </select>
+      <% } else if (horror) { %>
+        <select name="subCategory" >
+          <option value="horror">Haunting of Bly Manor</option>
+          <option value="horror">Hush</option>
+          <option value="horror">Midsommar</option>
+          <option value="horror">The Call</option>
+          <option value="horror">To Walking Dead</option>
+        </select>
+        <% } else if (fantasy) { %>
+          <select name="subCategory" >
+            <option value="fantasy">Encanto</option>
+            <option value="fantasy">Game of Thrones</option>
+            <option value="fantasy">Harry Potter</option>
+            <option value="fantasy">Lord of the Rings</option>
+            <option value="fantasy">The Witcher</option>
+          </select>
+          <% } else if (sci-fi) { %>
+            <select name="subCategory" >
+              <option value="sci-fi">Futurama</option>
+              <option value="sci-fi">Star Trek</option>
+              <option value="sci-fi">Star Wars</option>
+              <option value="sci-fi">The Orville</option>
+              <option value="sci-fi">Umbrella Academy</option>
+            </select>
+            <% } else if (nailed-it) { %>
+              <select name="subCategory" >
+                <option value="nailed-it">Hall of Shame</option>
+        <% } %>
       <label>
        What is the name of your creation? <input type = "text" name = title> 
       </label> <br>
@@ -36,4 +84,7 @@
       <button type="submit" form="form1" class="btn btn-success" id="submit-new">Add Recipe</button>
   </form>        
 </section>
+
+
+
 <%- include('../partials/footer.ejs') %>
