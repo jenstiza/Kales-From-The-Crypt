@@ -20,7 +20,7 @@
             </label>
            
             </div>
-            <select name="mainCategory" id="genreSelection">
+            <select name="mainCategory" id="firstList">
         <option value="comedy">A Fish Called Wensleydale</option>
         <option value="sci-fi">Cloves Encounters</option>
         <option value="fantasy">Leeky Cauldron</option>
@@ -29,8 +29,9 @@
       </select>
       <br>
       <label> What is the name of the Genre?</label> 
+      <select id="secondList">Test</select>
        <!-- // -->
-       <select name="subCategory" id="comedy" class="genre-display-on">
+       <select name="subCategory" id="horror" class="genre-display-on"> -->
         <option value="comedy">Brooklyn Nine-Nine</option>
         <option value="comedy">Derry Girls</option>
         <option value="comedy">Parks and Recreation</option>
@@ -83,7 +84,43 @@
 </section>
 
 <script>
-  let comedy = document.getElementById('comedy');
+
+function getGenre(){
+			var list1 = document.getElementById('firstList');
+			var list2 = document.getElementById("secondList");
+			var list1SelectedValue = list1.options[list1.selectedIndex].value;
+			
+			if (list1SelectedValue=='Cloves Encounters')
+            {
+				
+				list2.options.length=0;
+				list2.options[0] = new Option('--Select--', '');
+				list2.options[1] = new Option('Star Trek', 'Star Trek');
+				list2.options[2] = new Option('Star Wars', 'Star Wars');
+				list2.options[3] = new Option('Futurama', 'Futurama');
+				list2.options[4] = new Option('The Orville', 'The Orville');
+				list2.options[5] = new Option('Umbrella Academy', 'Umbrella Academy');
+				
+			}
+			else if (list1SelectedValue=='A Fish Called Wensleydale')
+            {
+				
+				list2.options.length=0;
+				list2.options[0] = new Option('--Select--', '');
+				list2.options[1] = new Option('Brooklyn Nine-Nine', 'Brooklyn Nine-Nine');
+				list2.options[2] = new Option('Psych', 'Psych');
+				list2.options[3] = new Option('The Marvelous Mrs. Maisel', 'The Marvelous Mrs. Maisel');
+				list2.options[4] = new Option('Derry Girls', 'Derry Girls');
+				list2.options[5] = new Option('Parks and Recreation', 'Parks and Recreation');
+				
+			}
+}
+
+
+
+
+
+  /*let comedy = document.getElementById('comedy');
   let horror = document.getElementById('horror');
   let fantasy = document.getElementById('fantasy');
   let scifi = document.getElementById('sci-fi');
@@ -100,9 +137,10 @@
     genreArr[option].add("genre-display-on");
     
   });
+*/
+
 
 </script>
-
 
 </main>
 </body>

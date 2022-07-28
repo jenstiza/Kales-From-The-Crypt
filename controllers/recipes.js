@@ -9,14 +9,27 @@ module.exports = {
     show,
     edit,
     update,
-    genreSort,
+    showAll,
+    //genreSort,
     delete: deleteRecipe,
   }
 
 
-function genreSort(req,res) {
+
+  function showAll(req, res) {
+    let recipeQuery = req.query.mainCategory ? {name: new RegExp(req.query.mainCategory, 'i')} : {};
+    Recipe.find(recipeQuery, function(err, recipes) {
+      // Why not reuse the books/index template?
+      res.render('/recipes/index', {
+        recipes,
+        user: req.user,  // should use middleware instead (see below)
+        genreSearch: req.query.mainCategory // use to set content of search form
+      });
+    });
+  }
+/*function genreSort(req,res) {
   Recipe.find({})
-}
+}*/
 
 
 
@@ -101,7 +114,7 @@ function update(req, res) {
 
 function deleteRecipe(req, res) {
     Recipe.findOneAndDelete(
-      {_id: req.params.id, userRecommending: req.user._id}, function(err) {
+      {_id: req.params.id}, function(err) {
         res.redirect('/recipes');
       }
     );
