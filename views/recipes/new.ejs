@@ -17,7 +17,7 @@
         <form action="/recipes" method="POST" id="form1">
           
             <label>What Category does it belong to?&nbsp;</label>
-             <select name="mainCategory" id="firstList">
+             <select name="mainGenre" id="firstList">
                 <option value="comedy">A Fish Called Wensleydale</option>
                 <option value="sci-fi">Cloves Encounters</option>
                 <option value="fantasy">Leeky Cauldron</option>
@@ -25,30 +25,30 @@
                 <option value="nailed-it!">To Err is Cumin</option>
             </select>
       <br>
-      <label> What is the name of the Genre?</label> 
-             <select name="subCategory" id="secondList"> -->
-              <option value="comedy">Brooklyn Nine-Nine</option>
-              <option value="comedy">Derry Girls</option>
-              <option value="comedy">Parks and Recreation</option>
-              <option value="comedy">Psych</option>
-              <option value="comedy">The Marvelous Mrs. Maisel</option>
-              <option value="horror">Haunting of Bly Manor</option>
-              <option value="horror">Hush</option>
-              <option value="horror">Midsommar</option>
-              <option value="horror">The Call</option>
-              <option value="horror">To Walking Dead</option>
-              <option value="fantasy">Encanto</option>
-              <option value="fantasy">Game of Thrones</option>
-              <option value="fantasy">Harry Potter</option>
-              <option value="fantasy">Lord of the Rings</option>
-              <option value="fantasy">The Witcher</option>
-              <option value="sci-fi">Futurama</option>
-              <option value="sci-fi">Star Trek</option>
-              <option value="sci-fi">Star Wars</option>
-              <option value="sci-fi">The Orville</option>
-              <option value="sci-fi">Umbrella Academy</option>
-              <option value="nailed-it">Hall of Shame</option>
-       <!-- // -->
+            <label> What is the name of the Genre?</label> 
+             <select name="subGenre" id="secondList"> -->
+              <option value="Brooklyn Nine-Nine">Brooklyn Nine-Nine</option>
+              <option value="Derry Girls">Derry Girls</option>
+              <option value="Parks and Recreation">Parks and Recreation</option>
+              <option value="Psych">Psych</option>
+              <option value="The Marvelous Mrs. Maisel">The Marvelous Mrs. Maisel</option>
+              <option value="Haunting of Bly Manor">Haunting of Bly Manor</option>
+              <option value="Hush">Hush</option>
+              <option value="Midsommar">Midsommar</option>
+              <option value="The Call">The Call</option>
+              <option value="The Walking Dead">To Walking Dead</option>
+              <option value="Encanto">Encanto</option>
+              <option value="Game of Thrones">Game of Thrones</option>
+              <option value="Harry Potter">Harry Potter</option>
+              <option value="Lord of the Rings">Lord of the Rings</option>
+              <option value="The Witcher">The Witcher</option>
+              <option value="Futurama">Futurama</option>
+              <option value="Star Trek">Star Trek</option>
+              <option value="Star Wars">Star Wars</option>
+              <option value="The Orville">The Orville</option>
+              <option value="Umbrella Academy">Umbrella Academy</option>
+              <option value="Hall of Shame">Hall of Shame</option>
+              
       <label>What is the name of your creation? </label><input type ="text" name = title> <br>
       <label>
         Do you have an image of your creation? If so, insert url <input type ="text" name = imageUrl>
@@ -86,6 +86,7 @@ function getGenre() {
 				
 			}
 			      else if (list1SelectedValue=='A Fish Called Wensleydale')
+    
             {
 				
 				list2.options.length=[];

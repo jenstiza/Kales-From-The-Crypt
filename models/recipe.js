@@ -21,8 +21,9 @@ const reviewSchema = new Schema({
 const recipeSchema = new Schema({
   mainGenre: {
     type: String,
-    enum: ['A Fish Called Wensleydale', 'Cloves Encounters', 'Leeky Cauldron', 'The Bleu Witch Project', 'To Err is Cumin']
+    enum: ['comedy', 'sci-fi', 'fantasy', 'horror', 'nailed-it!']
   },
+
   subGenre: {
     type: String,
   },
@@ -40,11 +41,11 @@ const recipeSchema = new Schema({
     required: true
   },
   ingredients: {
-    type: [String],
+    type: String,
     required: true
   },
   instructions: {
-    type: [String],
+    type: String,
     required: true,
   },
   user: {

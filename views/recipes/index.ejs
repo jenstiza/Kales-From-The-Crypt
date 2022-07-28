@@ -1,9 +1,11 @@
 <%- include('../partials/header') %>
 
-<% recipes.forEach(function(r) %>
+<% recipes.forEach(function(recipe) { %>
 <tr>
     <td><a href="/recipes/<%= recipe._id %>"><img src = "<%= recipe.imageUrl %>"> </a>
 </tr>
 
+
+<% }) %>
 
 <%- include('../partials/footer') %>

@@ -3,52 +3,26 @@ const User = require('../models/user.js');
 
 
 module.exports = {
-    index,
     new: newRecipe,
     create,
     show,
     edit,
     update,
     showAll,
-    //genreSort,
     delete: deleteRecipe,
+    index
   }
 
-
-
-  function showAll(req, res) {
-    let recipeQuery = req.query.mainCategory ? {name: new RegExp(req.query.mainCategory, 'i')} : {};
-    Recipe.find(recipeQuery, function(err, recipes) {
-      // Why not reuse the books/index template?
-      res.render('/recipes/index', {
-        recipes,
-        user: req.user,  // should use middleware instead (see below)
-        genreSearch: req.query.mainCategory // use to set content of search form
-      });
+function index(req, res) { 
+  console.log(req.body);
+  Recipe.find({mainGenre: req.body.mainGenre}, function(err, recipes) {
+    res.render('recipes/index', {
+      recipes, 
     });
-  }
-/*function genreSort(req,res) {
-  Recipe.find({})
-}*/
+  });
 
-
-
-
-
-function index(req, res) {
-  Recipe.find({})
-    .populate('user')
-    .then(recipes => {
-      res.render('recipes/index', {
-        recipes,
-        title: 'All Recipes'
-      })
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/recipes')
-    })
 }
+
 
 function newRecipe(req, res) {
   res.render('recipes/new', {
@@ -57,16 +31,19 @@ function newRecipe(req, res) {
 }
 
 function create(req, res) {
+  console.log(req.body);
   req.body.user = req.user._id;
   req.body.userName = req.user.name;
   req.body.userAvatar = req.user.avatar;
     const recipe = new Recipe(req.body);
     // Assign the logged in user's id
    
-    recipe.save(function(err) {
-      if (err) return res.redirect('/recipes/new' /* or a path that displays a custom error */);
-      // Probably want to go to newly added book's show view
-      res.redirect(`/recipes/${recipe._id}`);
+    recipe.save(function(err,recipe) {
+      if (err) {
+        console.log(err);
+        return res.redirect('/recipes/new' );
+      }
+      res.redirect(`/recipes`);
     });
   }
 
@@ -120,13 +97,10 @@ function deleteRecipe(req, res) {
     );
   }
 
-  function allRecipes(req, res) { 
-    let recipeQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-    Recipe.find(recipeQuery, function(err, recipes) {
-      res.render('/recipes/index', {
-        recipes,
-        user: req.user,  
-        nameSearch: req.query.name  
+  function showAll(req, res) { 
+    Recipe.find({}, function(err, recipes) {
+      res.render('recipes/index', {
+        recipes, 
       });
     });
 

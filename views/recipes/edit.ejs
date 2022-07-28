@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kales From The Crypt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+ <h1>&nbsp; &nbsp; New Recipe Creator</h1>
+    <section id="new-subGenre-section">
+        <form action="/recipes/<%=recipe._id%>?_method=PUT" method="POST" id="form1">
+          
+            <label>What Category does it belong to?&nbsp;</label>
+             <select name="mainGenre" id="firstList">
+                <option value="comedy">A Fish Called Wensleydale</option>
+                <option value="sci-fi">Cloves Encounters</option>
+                <option value="fantasy">Leeky Cauldron</option>
+                <option value="horror">The Bleu Witch Project</option>
+                <option value="nailed-it!">To Err is Cumin</option>
+            </select>
+      <br>
+            <label> What is the name of the Genre?</label> 
+             <select name="subGenre" id="secondList"> -->
+              <option value="Brooklyn Nine-Nine">Brooklyn Nine-Nine</option>
+              <option value="Derry Girls">Derry Girls</option>
+              <option value="Parks and Recreation">Parks and Recreation</option>
+              <option value="Psych">Psych</option>
+              <option value="The Marvelous Mrs. Maisel">The Marvelous Mrs. Maisel</option>
+              <option value="Haunting of Bly Manor">Haunting of Bly Manor</option>
+              <option value="Hush">Hush</option>
+              <option value="Midsommar">Midsommar</option>
+              <option value="The Call">The Call</option>
+              <option value="The Walking Dead">To Walking Dead</option>
+              <option value="Encanto">Encanto</option>
+              <option value="Game of Thrones">Game of Thrones</option>
+              <option value="Harry Potter">Harry Potter</option>
+              <option value="Lord of the Rings">Lord of the Rings</option>
+              <option value="The Witcher">The Witcher</option>
+              <option value="Futurama">Futurama</option>
+              <option value="Star Trek">Star Trek</option>
+              <option value="Star Wars">Star Wars</option>
+              <option value="The Orville">The Orville</option>
+              <option value="Umbrella Academy">Umbrella Academy</option>
+              <option value="Hall of Shame">Hall of Shame</option>
+              
+      <label>What is the name of your creation? </label><input type ="text" name = "title" value="<%=recipe.title%>"> <br>
+      <label>
+        Do you have an image of your creation? If so, insert url <input type ="text" name = "imageUrl" value="<%=recipe.imageUrl%>">
+      </label> <br>
+      <label>
+        Describe your creation: <input type = "text" name = "description" value="<%=recipe.description%>">
+      </label>
+      <label>
+        What ingredients does your creation require? <input type = "text" name = "ingredients" value="<%=recipe.ingredients%>">
+      </label> <br>
+      <label>
+        How do we make your creation? <input type = "text" name = "instructions" value="<%=recipe.instructions%>">
+      </label>
+      <button type="submit" form="form1" class="btn btn-success" id="submit-new">Add Recipe</button>
+  </form>        
+</section>

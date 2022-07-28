@@ -14,10 +14,8 @@
     <div><%= recipe.user %></div>
     <div>Recipe Created By:</div>
     <div><img src = "<%= recipe.userAvatar %>"></div>
-    
-    <div>
-   
-        <br><br><h2>Reviews</h2>
+    <a href="/recipes/<%= recipe._id %>/edit">Edit</a>
+    <br><br><h2>Reviews</h2>
 
 <% if (user) { %>
   <form id="add-review-form" method="POST"
@@ -53,10 +51,11 @@
         <% sum += r.rating %>
         <tr>
           <td class="review-user"><img src="<%= r.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"><%= r.userName %></td>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.content %></td>
           <td><%= r.rating %></td>
           <td>
-            <% if ( user?._id.equals(r.user) ) { %>
+            <% if ( user.equals(r.user) ) { %>
               <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
@@ -74,6 +73,13 @@
   <h5>No Reviews Yet</h5>
 <% } %>
 
-   
+
+
+
+
+
+    
+   </section>
+
 
 <%- include('../partials/footer') %>

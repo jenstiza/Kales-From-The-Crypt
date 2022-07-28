@@ -13,12 +13,12 @@
     <br>
     <nav>
       <section id="mainCategoryNav">
-        <form action="/recipes/index" method="POST" id="form2">
+        <form action="/recipes/catalog" method="POST" id="form2">
             <label> &nbsp; Select Category </label>
             
            
             </div>
-            <select name="mainCategory" id="genreSelection">
+            <select name="mainGenre" id="genreSelection">
         <option value="comedy">A Fish Called Wensleydale</option>
         <option value="sci-fi">Cloves Encounters</option>
         <option value="fantasy">Leeky Cauldron</option>
@@ -29,11 +29,21 @@
       </form>        
       
     </section>
+    <div class="all">
+      <a href="/recipes" style="float: right;">  &nbsp; &nbsp; All Recipes</a>
+    </div>
     <div class="create">
       <a href="/recipes/new" style="float: right;"> Create A Recipe! </a>
       </div>
     
-    <div><a href="/auth/google" class="login"><img src="https://i.imgur.com/yYJh1b5.png"></a>
+    <div><a href="/auth/google" class="login">
+      <%if(user){%>
+        <a href="/logout"><img src="https://i.imgur.com/8BPwZsy.png"></a>
+      <% } else { %>
+        <img src="https://i.imgur.com/yYJh1b5.png">
+      <% } %>
+      </a>
+
       </nav>
     <br>
     <p><strong>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>Welcome to Kales From the Crypt, the place for your new <em>favorite </em> recipes!<br> Take a look around and join the community!<br> While you're here, consider giving back to your local food bank!</strong><br>
