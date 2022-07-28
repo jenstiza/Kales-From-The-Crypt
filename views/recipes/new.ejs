@@ -12,59 +12,42 @@
 </head>
 <body>
 
- <h1>New Recipe</h1>
+ <h1>&nbsp; &nbsp; New Recipe Creator</h1>
     <section id="new-subGenre-section">
         <form action="/recipes" method="POST" id="form1">
-            <label>What Category does it belong to?
-                
-            </label>
-           
-            </div>
-            <select name="mainCategory" id="firstList">
-        <option value="comedy">A Fish Called Wensleydale</option>
-        <option value="sci-fi">Cloves Encounters</option>
-        <option value="fantasy">Leeky Cauldron</option>
-        <option value="horror">The Bleu Witch Project</option>
-        <option value="nailed-it!">To Err is Cumin</option>
-      </select>
+          
+            <label>What Category does it belong to?&nbsp;</label>
+             <select name="mainCategory" id="firstList">
+                <option value="comedy">A Fish Called Wensleydale</option>
+                <option value="sci-fi">Cloves Encounters</option>
+                <option value="fantasy">Leeky Cauldron</option>
+                <option value="horror">The Bleu Witch Project</option>
+                <option value="nailed-it!">To Err is Cumin</option>
+            </select>
       <br>
       <label> What is the name of the Genre?</label> 
-      <select id="secondList">Test</select>
-       <!-- // -->
-       <select name="subCategory" id="horror" class="genre-display-on"> -->
-        <option value="comedy">Brooklyn Nine-Nine</option>
-        <option value="comedy">Derry Girls</option>
-        <option value="comedy">Parks and Recreation</option>
-        <option value="comedy">Psych</option>
-        <option value="comedy">The Marvelous Mrs. Maisel</option>
-      </select>
-      <!-- // -->
-        <select name="subCategory" id="horror"class="genre-display-off">
-          <option value="horror">Haunting of Bly Manor</option>
-          <option value="horror">Hush</option>
-          <option value="horror">Midsommar</option>
-          <option value="horror">The Call</option>
-          <option value="horror">To Walking Dead</option>
-        </select>
-        <!-- // -->
-          <select name="subCategory" id = "fantasy" class="genre-display-off">
-            <option value="fantasy">Encanto</option>
-            <option value="fantasy">Game of Thrones</option>
-            <option value="fantasy">Harry Potter</option>
-            <option value="fantasy">Lord of the Rings</option>
-            <option value="fantasy">The Witcher</option>
-          </select>
-          <!-- // -->
-            <select name="subCategory" id="sci-fi" class="genre-display-off">
+             <select name="subCategory" id="secondList"> -->
+              <option value="comedy">Brooklyn Nine-Nine</option>
+              <option value="comedy">Derry Girls</option>
+              <option value="comedy">Parks and Recreation</option>
+              <option value="comedy">Psych</option>
+              <option value="comedy">The Marvelous Mrs. Maisel</option>
+              <option value="horror">Haunting of Bly Manor</option>
+              <option value="horror">Hush</option>
+              <option value="horror">Midsommar</option>
+              <option value="horror">The Call</option>
+              <option value="horror">To Walking Dead</option>
+              <option value="fantasy">Encanto</option>
+              <option value="fantasy">Game of Thrones</option>
+              <option value="fantasy">Harry Potter</option>
+              <option value="fantasy">Lord of the Rings</option>
+              <option value="fantasy">The Witcher</option>
               <option value="sci-fi">Futurama</option>
               <option value="sci-fi">Star Trek</option>
               <option value="sci-fi">Star Wars</option>
               <option value="sci-fi">The Orville</option>
               <option value="sci-fi">Umbrella Academy</option>
-            </select>
-            <!-- // -->
-              <select name="subCategory" id="nailed-it" class="genre-display-off">
-                <option value="nailed-it">Hall of Shame</option>
+              <option value="nailed-it">Hall of Shame</option>
        <!-- // -->
       <label>What is the name of your creation? </label><input type ="text" name = title> <br>
       <label>
@@ -85,7 +68,7 @@
 
 <script>
 
-function getGenre(){
+function getGenre() {
 			var list1 = document.getElementById('firstList');
 			var list2 = document.getElementById("secondList");
 			var list1SelectedValue = list1.options[list1.selectedIndex].value;
@@ -93,7 +76,7 @@ function getGenre(){
 			if (list1SelectedValue=='Cloves Encounters')
             {
 				
-				list2.options.length=0;
+				list2.options.length=[];
 				list2.options[0] = new Option('--Select--', '');
 				list2.options[1] = new Option('Star Trek', 'Star Trek');
 				list2.options[2] = new Option('Star Wars', 'Star Wars');
@@ -102,10 +85,10 @@ function getGenre(){
 				list2.options[5] = new Option('Umbrella Academy', 'Umbrella Academy');
 				
 			}
-			else if (list1SelectedValue=='A Fish Called Wensleydale')
+			      else if (list1SelectedValue=='A Fish Called Wensleydale')
             {
 				
-				list2.options.length=0;
+				list2.options.length=[];
 				list2.options[0] = new Option('--Select--', '');
 				list2.options[1] = new Option('Brooklyn Nine-Nine', 'Brooklyn Nine-Nine');
 				list2.options[2] = new Option('Psych', 'Psych');
@@ -114,9 +97,35 @@ function getGenre(){
 				list2.options[5] = new Option('Parks and Recreation', 'Parks and Recreation');
 				
 			}
+			      else if (list1SelectedValue=='Leeky Cauldron')
+            {
+              list2.options.length=[];
+				list2.options[0] = new Option('--Select--', '');
+				list2.options[1] = new Option('Encanto', 'Encanto');
+				list2.options[2] = new Option('Game of Thrones', 'Game of Thrones');
+				list2.options[3] = new Option('Harry Potter', 'Harry Potter');
+				list2.options[4] = new Option('Lord of the Rings', 'Lord of the Rings');
+				list2.options[5] = new Option('The Witcher', 'The Witcher');
 }
 
+            else if (list1SelectedValue=='The Bleu Witch Project')
+            {
+              list2.options.length=[];
+				list2.options[0] = new Option('--Select--', '');
+				list2.options[1] = new Option('The Walking Dead', 'The Walking Dead');
+				list2.options[2] = new Option('Haunting of Bly Manor', 'Haunting of Bly Manor');
+				list2.options[3] = new Option('The Call', 'The Call');
+				list2.options[4] = new Option('Midsommar', 'Midsommar');
+				list2.options[5] = new Option('Midsommar', 'Midsommar');
+}
+          else if (list1SelectedValue=='To Err is Cumin')
+            {
+              list2.options.length=[];
+				list2.options[0] = new Option('--Select--', '');
+				list2.options[1] = new Option('Hall of Shame', 'Hall of Shame');
 
+            }
+     }
 
 
 
