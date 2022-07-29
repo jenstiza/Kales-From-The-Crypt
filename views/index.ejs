@@ -14,9 +14,8 @@
     <nav>
       <section id="mainCategoryNav">
         <form action="/recipes/catalog" method="POST" id="form2">
-            <label> &nbsp; Select Category </label>
-            
-           
+            <label> &nbsp; Select Category &#9759; </label>
+            <br>
             </div>
             <select name="mainGenre" id="genreSelection">
         <option value="comedy">A Fish Called Wensleydale</option>
@@ -25,29 +24,38 @@
         <option value="horror">The Bleu Witch Project</option>
         <option value="nailed-it!">To Err is Cumin</option>
       </select>
-      <input type="submit" value="Go">
+      <input type="submit" value="Click me to Confirm Category Selection">
       </form>        
       
     </section>
     <div class="all">
-      <a href="/recipes" style="float: right;">  &nbsp; &nbsp; All Recipes</a>
+      <a href="/recipes"> All Recipes</a>
     </div>
     <div class="create">
-      <a href="/recipes/new" style="float: right;"> Create A Recipe! </a>
+      <a href="/recipes/new"> Create A Recipe! </a>
       </div>
     
     <div><a href="/auth/google" class="login">
       <%if(user){%>
-        <a href="/logout"><img src="https://i.imgur.com/8BPwZsy.png"></a>
+        <a href="/logout"><img src="https://i.imgur.com/mcZoLHA.png"></a>
       <% } else { %>
         <img src="https://i.imgur.com/yYJh1b5.png">
       <% } %>
       </a>
 
       </nav>
-    <br>
-    <p><strong>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>Welcome to Kales From the Crypt, the place for your new <em>favorite </em> recipes!<br> Take a look around and join the community!<br> While you're here, consider giving back to your local food bank!</strong><br>
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+      <br>
+      
+    <p class="intro"> Welcome to Kales From the Crypt, the place for your new favorite recipes! <br>
+      Select a category to browse specific genres or click all recipes to see all recipes regardless of genre! <br>
+      &#9760; Cloves Encounters = Sci-Fi <br>
+      &#9760; A Fish Called Wensleydale = Comedy <br>
+      &#9760; Leeky Cauldron = Fantasy <br>
+      &#9760; The Bleu Witch Project = Horror <br>
+      &#9760; To Err is Cumin = User Submitted failed attempts <br> <br>
+      Take a look around and if you decide to sign up you can add your own favorite recipes! <br>
+      While you're here, consider giving back to your local food bank!<br> 
+      </p>
 
   </body>
 </html>
