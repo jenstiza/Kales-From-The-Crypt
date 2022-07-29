@@ -13,7 +13,7 @@ Made with MongoDB, Javascript, Html, CSS, Mongoose
 # Getting Started #
 
 [Click me to check it out!](https://kales-from-the-crypt.herokuapp.com/)
-
+[Link to Trello Board](https://trello.com/b/3N2vDlcT/p2-general-assembly)
 
 # Next Steps #
         - [ ] Be able to create your own subgenre (tv show,book,movie,game) to add your new recipes to
