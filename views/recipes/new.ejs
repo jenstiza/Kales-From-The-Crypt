@@ -16,7 +16,7 @@
     <section id="new-subGenre-section">
         <form action="/recipes" method="POST" id="form1">
           
-            <label>What Category does it belong to?&nbsp;</label>
+            <label>What Category does it belong to?&nbsp;</label> <br> 
              <select name="mainGenre" id="firstList">
                 <option value="comedy">A Fish Called Wensleydale</option>
                 <option value="sci-fi">Cloves Encounters</option>
@@ -24,8 +24,8 @@
                 <option value="horror">The Bleu Witch Project</option>
                 <option value="nailed-it!">To Err is Cumin</option>
             </select>
-      <br>
-            <label> What is the name of the Genre?</label> 
+      <br><br>
+            <label id="sub-drop"> What is the recipe from?</label> <br>
              <select name="subGenre" id="secondList"> -->
               <option value="Brooklyn Nine-Nine">Brooklyn Nine-Nine</option>
               <option value="Derry Girls">Derry Girls</option>
@@ -48,20 +48,16 @@
               <option value="The Orville">The Orville</option>
               <option value="Umbrella Academy">Umbrella Academy</option>
               <option value="Hall of Shame">Hall of Shame</option>
-              
-      <label>What is the name of your creation? </label><input type ="text" name = title> <br>
-      <label>
-        Do you have an image of your creation? If so, insert url <input type ="text" name = imageUrl>
-      </label> <br>
-      <label>
-        Describe your creation: <input type = "text" name = description>
-      </label>
-      <label>
-        What ingredients does your creation require? <input type = "text" name = ingredients>
-      </label> <br>
-      <label>
-        How do we make your creation? <input type = "text" name = instructions>
-      </label>
+              </select>
+             <br> <br>
+      <label for="name">&nbsp;What is the name of your creation? </label><br>&nbsp;&nbsp;<textarea id="title" name="title" rows="4" cols="50">
+        </textarea> <br><br>
+      <label>&nbsp; Do you have an image of your creation? If so, insert url: &nbsp;<input type ="text" name = imageUrl></label> <br><br>
+      <label>&nbsp;Describe your creation: </label> <br> &nbsp;&nbsp;<textarea id="descibe" name="description" rows="4" cols="50"> </textarea>
+      <br><br>
+      <label>&nbsp;What ingredients does your creation require? </label> <br>&nbsp;&nbsp; <textarea id="ingredients" name="ingredients" rows="4" cols="50"> </textarea>
+      <br><br>
+      <label>&nbsp;How do we make your creation? </label> <br>&nbsp;&nbsp;  <textarea id="instructions" name="instructions" rows="4" cols="50"> </textarea> <br>
       <button type="submit" form="form1" class="btn btn-success" id="submit-new">Add Recipe</button>
   </form>        
 </section>

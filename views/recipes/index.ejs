@@ -1,11 +1,46 @@
-<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kales From The Crypt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <!-- <div id="page-container">
+          <div id="content-wrap"> -->
+    <header>
+      <nav>
+        <section id="recipeindexnav">
+            <div class="home"> <a href="/"> &#9760; Home  &nbsp; </a> </div>
+      <div id="recipeindexlogin" ><a href="/auth/google" class="login">
+        <%if(user){%>
+          <a href="/logout"><img src="https://i.imgur.com/mcZoLHA.png"></a>
+        <% } else { %>
+          <img src="https://i.imgur.com/yYJh1b5.png">
+        <% } %>
+        </a>
+  </div>
+        </nav>
+          
+    </header>
+    
+    <main>
 
+        
 <% recipes.forEach(function(recipe) { %>
+    <table cellpadding="0" cellspacing="0" width="100%">
 <tr>
     <td><a href="/recipes/<%= recipe._id %>"><img src = "<%= recipe.imageUrl %>"> </a>
 </tr>
-
+</table>
 
 <% }) %>
 
-<%- include('../partials/footer') %>
+</main>
+</body>
+</html>
